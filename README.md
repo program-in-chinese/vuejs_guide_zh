@@ -1,2 +1,18 @@
-# vuejs_guide_zh
-在https://cn.vuejs.org/v2/guide/的示例代码中尽量使用中文命名
+所有演示都在本地测试通过. 有任何问题/批评请新建Issue.
+
+### 声明式渲染
+
+```
+    <div id="元素id">
+      <p>{{ 问候 }}</p>
+    </div>
+```
+```
+var 应用 = new Vue({
+  el: '#元素id',
+  data: {
+    问候: '吃了么?'
+  }
+})
+```
+
