@@ -34,6 +34,8 @@ var 应用2 = new Vue({
 ```
 再次打开浏览器的 JavaScript 控制台输入 `应用2.动态绑定信息 = '新消息'`，就会再一次看到这个绑定了 title 属性的 HTML 已经进行了更新
 
+### 条件与循环
+
 ```
     <div id="元素id3">
       <p v-if="看得到">现在你看到我了</p>
@@ -88,3 +90,27 @@ var 应用4 = new Vue({
 
 (found in <Root>)
 ```
+在控制台里，输入 应用4.任务表.push({ 内容: '新项目' })，你会发现列表中添加了一个新项。
+
+### 处理用户输入
+```
+    <div id="元素id5">
+      <p>{{ 问好 }}</p>
+      <button v-on:click="reverseMessage">倒着说</button>
+    </div>
+```
+```
+var 应用5 = new Vue({
+  el: '#元素id5',
+  data: {
+    问好: '你好'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.问好 = this.问好.split('').reverse().join('')
+    }
+  }
+})
+```
+`reverseMessage`中文化后, 无响应. 需调查.
+
