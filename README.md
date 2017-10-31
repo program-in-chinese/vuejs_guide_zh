@@ -49,3 +49,42 @@ var 应用3 = new Vue({
 ```
 
 继续在控制台设置 `应用3.看得到 = false`，你会发现“现在你看到我了”消失了。
+
+```
+    <div id="元素id4">
+      <ol>
+        <li v-for="任务 in 任务表">
+          {{ 任务.内容 }}
+        </li>
+      </ol>
+    </div>
+```
+```
+var 应用4 = new Vue({
+  el: '#元素id4',
+  data: {
+    任务表: [
+      { 内容: '学习 JavaScript' },
+      { 内容: '学习 Vue' },
+      { 内容: '整个牛项目' }
+    ]
+  }
+})
+```
+警告如下, 但列表仍然显示. 已经在Vue项目新建[issue](https://github.com/vuejs/vue/issues/6971)
+```
+[Vue warn]: Error compiling template:
+
+<div id="元素id4">
+      <ol>
+        <li v-for="任务 in 任务表">
+          {{ 任务.内容 }}
+        </li>
+      </ol>
+    </div>
+
+- invalid v-for alias "任务" in expression: v-for="任务 in 任务表"
+
+
+(found in <Root>)
+```
