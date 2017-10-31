@@ -128,3 +128,33 @@ var 应用6 = new Vue({
   }
 })
 ```
+
+### 组件化应用构建
+
+```
+    <div id="元素id7">
+      <ol>
+        <todo-item
+          v-for="物品 in 购物单"
+          v-bind:待购="物品"
+          v-bind:key="物品.序号">
+        </todo-item>
+      </ol>
+    </div>
+```
+```
+Vue.component('todo-item', {
+  props: ['待购'],
+  template: '<li>{{ 待购.名称 }}</li>'
+})
+var 应用7 = new Vue({
+  el: '#元素id7',
+  data: {
+    购物单: [
+      { 序号: 0, 名称: '蔬菜' },
+      { 序号: 1, 名称: '肉' },
+      { 序号: 2, 名称: '随便啥' }
+    ]
+  }
+})
+```

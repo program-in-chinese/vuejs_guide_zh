@@ -29,6 +29,15 @@
       <p>{{ 问好 }}</p>
       <input v-model="问好">
     </div>
+    <div id="元素id7">
+      <ol>
+        <todo-item
+          v-for="物品 in 购物单"
+          v-bind:待购="物品"
+          v-bind:key="物品.序号">
+        </todo-item>
+      </ol>
+    </div>
   </body>
   <script src="文本绑定.js"></script>
   <script src="属性绑定.js"></script>
@@ -36,4 +45,5 @@
   <script src="循环.js"></script>
   <script src="点击事件处理.js"></script>
   <script src="模型绑定.js"></script>
+  <script src="组件.js"></script>
 </html>
