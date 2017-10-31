@@ -114,3 +114,17 @@ var 应用5 = new Vue({
 ```
 `reverseMessage`中文化后, 无响应. 需调查.
 
+```
+    <div id="元素id6">
+      <p>{{ 问好 }}</p>
+      <input v-model="问好">
+    </div>
+```
+```
+var 应用6 = new Vue({
+  el: '#元素id6',
+  data: {
+    问好: '你好!'
+  }
+})
+```
