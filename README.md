@@ -106,13 +106,13 @@ var 应用5 = new Vue({
     问好: '你好'
   },
   methods: {
-    reverseMessage: function () {
+    倒着说: function () {
       this.问好 = this.问好.split('').reverse().join('')
     }
   }
 })
 ```
-`reverseMessage`中文化后, 无响应. 需调查.
+`v-on:click`暂时不支持中文方法名. 为此在Vue项目新建[issue](https://github.com/vuejs/vue/issues/6975), 经社区建议得知并检验, 另一种方式`@click`支持中文命名.
 
 ```
     <div id="元素id6">
@@ -158,3 +158,4 @@ var 应用7 = new Vue({
   }
 })
 ```
+这里的HTML标签`todo-item`和其他标签(如div, ol)一样, 不支持中文命名.

@@ -4,7 +4,7 @@ var 应用5 = new Vue({
     问好: '你好'
   },
   methods: {
-    reverseMessage: function () {
+    倒着说: function () {
       this.问好 = this.问好.split('').reverse().join('')
     }
   }
