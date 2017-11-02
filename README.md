@@ -96,7 +96,8 @@ var 应用4 = new Vue({
 ```
     <div id="元素id5">
       <p>{{ 问好 }}</p>
-      <button v-on:click="reverseMessage">倒着说</button>
+      <button @click="倒着说()">@click有效</button>
+      <button v-on:click="倒着说()">v-on:click有效</button>
     </div>
 ```
 ```
@@ -112,7 +113,7 @@ var 应用5 = new Vue({
   }
 })
 ```
-`v-on:click`暂时不支持中文方法名. 为此在Vue项目新建[issue](https://github.com/vuejs/vue/issues/6975), 经社区建议得知并检验, 另一种方式`@click`支持中文命名.
+`v-on:click`支持中文方法名, 但需要`()`. 为此在Vue项目新建[issue](https://github.com/vuejs/vue/issues/6975), 经社区建议得知并检验, 另一种方式`@click`也支持中文命名, 同样需要`()`.
 
 ```
     <div id="元素id6">
